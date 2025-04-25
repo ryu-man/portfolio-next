@@ -37,18 +37,14 @@ const Skills = () => {
   const skills = [
     {
       title: "HTML 5",
-      Experience: "",
       Icon: HtmlIcon,
     },
     {
       title: "CSS",
-      Experience: "",
       Icon: CssIcon,
     },
     {
       title: "TailwindCSS",
-      Experience:
-        "I have knowledge of most utility classes, able to extends and adjust theme in both V3 and V4",
       Icon: TailwindcssIcon,
     },
     SvelteSkill,
@@ -82,8 +78,6 @@ const Skills = () => {
 
     {
       title: "Mongodb",
-      Experience:
-        "I used MongoDB in my Master's Degree graduation project to create a database for a smart classroom management application, I worked with collections, documents, aggregation.",
       Icon: MongodbIcon,
     },
     {
@@ -96,7 +90,7 @@ const Skills = () => {
       Experience: () => (
         <div className="text-start flex flex-col gap-2 mt-4">
           <p>
-            Supabase it's an SQL database based on PostgreSQL, I am using in a
+            Supabase its an SQL database based on PostgreSQL, I am using in a
             side project I am currently working on.
           </p>
           <p>
@@ -163,10 +157,10 @@ const Skills = () => {
                 ? () => <p className="text-start">{skill.description}</p>
                 : skill.description;
 
-            const Experience =
-              typeof skill.Experience === "string"
-                ? () => <p className="text-start">{skill.Experience}</p>
-                : skill.Experience;
+            // const Experience =
+            //   typeof skill.Experience === "string"
+            //     ? () => <p className="text-start">{skill.Experience}</p>
+            //     : skill.Experience;
 
             return (
               <Tooltip key={skill.title}>

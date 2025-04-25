@@ -95,8 +95,8 @@ export const ReactSkill = {
   yoe: 2,
   proficiency: "Advanced",
   isFramework: true,
-  Description: Description,
-  Experience: Experience,
+  Description: ()=> (<></>),
+  Experience: ()=> (<></>),
   Icon: ReactIcon,
   projects,
   features
