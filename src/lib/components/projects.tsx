@@ -128,7 +128,7 @@ const Projects = () => {
 
               <p className="pb-2 pt-1 text-sm">{project.description}</p>
 
-              <div className="flex gap-2">
+              <div className="flex flex-wrap gap-2">
                 {project.stack.map((item) => {
                   return (
                     <Badge
