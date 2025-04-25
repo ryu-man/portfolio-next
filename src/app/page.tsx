@@ -3,7 +3,6 @@ import Hero from "@/lib/components/hero";
 import Services from "@/lib/components/services";
 import Skills from "@/lib/components/skills";
 import Stats from "@/lib/components/stats";
-import Education from "@/lib/components/education";
 import Projects from "@/lib/components/projects";
 import Contact from "@/lib/components/contact";
 

@@ -1,11 +1,8 @@
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import {
   Drawer,
-  DrawerClose,
   DrawerContent,
   DrawerDescription,
-  DrawerFooter,
   DrawerHeader,
   DrawerTitle,
 } from "@/components/ui/drawer";
@@ -19,11 +16,11 @@ type DrawerSkillProps = {
     Icon: ReactNode;
     Description: ReactNode;
     Experience: ReactNode;
+    features: () => string[];
   };
-  children?: ReactNode;
   onClose?: () => void;
 };
-const DrawerSkill = ({ children, skill, onClose }: DrawerSkillProps) => {
+const DrawerSkill = ({ skill, onClose }: DrawerSkillProps) => {
   const {
     title,
     Experience,
@@ -31,7 +28,6 @@ const DrawerSkill = ({ children, skill, onClose }: DrawerSkillProps) => {
     yoe = 1,
     proficiency,
     features,
-    projects,
     Description,
   } = skill ?? {};
   return (

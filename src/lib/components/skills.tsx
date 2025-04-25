@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "motion/react";
 import {
   BunJsIcon,
   CssIcon,
@@ -14,12 +13,9 @@ import {
   GraphqlIcon,
   HtmlIcon,
   MongodbIcon,
-  MongooseIcon,
   NextjsIcon,
   NodeJsIcon,
   PostgresqlIcon,
-  ReactIcon,
-  SqliteIcon,
   SupabaseIcon,
   TailwindcssIcon,
   VercelIcon,
@@ -159,39 +155,43 @@ const Skills = () => {
   return (
     <>
       <div className="lg:flex sd:justify-around sd:h-fit grid grid-cols-4 place-items-center py-16 gap-y-8 gap-x-2 flex-wrap">
-            <TooltipProvider>
-              {skills.map((skill) => {
-                const Icon = skill.Icon;
-                const Description =
-                  typeof skill.description === "string"
-                    ? () => <p className="text-start">{skill.description}</p>
-                    : skill.description;
+        <TooltipProvider>
+          {skills.map((skill) => {
+            const Icon = skill.Icon;
+            const Description =
+              typeof skill.description === "string"
+                ? () => <p className="text-start">{skill.description}</p>
+                : skill.description;
 
-                const Experience =
-                  typeof skill.Experience === "string"
-                    ? () => <p className="text-start">{skill.Experience}</p>
-                    : skill.Experience;
+            const Experience =
+              typeof skill.Experience === "string"
+                ? () => <p className="text-start">{skill.Experience}</p>
+                : skill.Experience;
 
-                return (
-                  <Tooltip key={skill.title}>
-                    <TooltipTrigger
-                      className={cn("h-12 aspect-square hover:text-accent duration-300 ease-in-out rounded-lg p-2 bg-primary/5", skill.isFramework && "bg-accent/5 text-accent hover:bg-accent/20 active:bg-accent/30")}
-                      onClick={() => setSelectedSkill(skill)}
-                    >
-                      {/* <motion.div initial={{ scale: 1 }}> */}
-                      <Icon />
-                      {/* </motion.div> */}
-                    </TooltipTrigger>
-                    <TooltipContent className="max-w-[18rem]">
-                      <h3 className="text-lg font-semibold">{skill.title}</h3>
+            return (
+              <Tooltip key={skill.title}>
+                <TooltipTrigger
+                  className={cn(
+                    "h-12 aspect-square hover:text-accent duration-300 ease-in-out rounded-lg p-2 bg-primary/5",
+                    skill.isFramework &&
+                      "bg-accent/5 text-accent hover:bg-accent/20 active:bg-accent/30"
+                  )}
+                  onClick={() => setSelectedSkill(skill)}
+                >
+                  {/* <motion.div initial={{ scale: 1 }}> */}
+                  <Icon />
+                  {/* </motion.div> */}
+                </TooltipTrigger>
+                <TooltipContent className="max-w-[18rem]">
+                  <h3 className="text-lg font-semibold">{skill.title}</h3>
 
-                      {Description && <Description />}
-                    </TooltipContent>
-                  </Tooltip>
-                );
-              })}
-            </TooltipProvider>
-          </div>
+                  {Description && <Description />}
+                </TooltipContent>
+              </Tooltip>
+            );
+          })}
+        </TooltipProvider>
+      </div>
 
       <DrawerSkill
         skill={selectedSkill}

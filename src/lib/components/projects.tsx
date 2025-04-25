@@ -2,9 +2,9 @@
 
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
-import Spotlight from "spotlight.js/src/js/spotlight";
 import "spotlight.js/dist/css/spotlight.min.css";
 import Section from "./section";
+import { useEffect, useRef } from "react";
 
 const projects = [
   {
@@ -98,16 +98,28 @@ const projects = [
 ];
 
 const Projects = () => {
+  const spotlight = useRef(undefined);
+
+  useEffect(() => {
+    import("spotlight.js/src/js/spotlight").then((md) => {
+      spotlight.current = md;
+    });
+  }, []);
   return (
     <Section className="">
-      <h2 className="font-bold text-6xl mb-8" id="projects">My Projects</h2>
+      <h2 className="font-bold text-6xl mb-8" id="projects">
+        My Projects
+      </h2>
 
       <div className="grid grid-cols-2 gap-8">
         {projects.map((project, i) => {
           return (
             <div className="" key={project.name}>
               <div className="flex flex-col">
-                <a className="text-3xl font-semibold hover:text-accent hover:underline duration-200 transition-colors" href={project.github}>
+                <a
+                  className="text-3xl font-semibold hover:text-accent hover:underline duration-200 transition-colors"
+                  href={project.github}
+                >
                   <span className="mr-2">{i + 1}.</span>
                   <span>{project.name}</span>
                 </a>
@@ -136,7 +148,7 @@ const Projects = () => {
                   width={400}
                   height={100}
                   onClick={() => {
-                    Spotlight.show([
+                    spotlight.current.show([
                       {
                         src: project.images.at(0)?.url ?? "",
                         title: `${project.name}`,
@@ -156,7 +168,7 @@ const Projects = () => {
                         width={200}
                         height={40}
                         onClick={() => {
-                          Spotlight.show([
+                          spotlight.current.show([
                             { src: image?.url ?? "", title: `${project.name}` },
                           ]);
                         }}
