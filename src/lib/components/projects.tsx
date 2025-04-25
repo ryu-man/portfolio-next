@@ -111,7 +111,7 @@ const Projects = () => {
         My Projects
       </h2>
 
-      <div className="grid grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {projects.map((project, i) => {
           return (
             <div className="" key={project.name}>
