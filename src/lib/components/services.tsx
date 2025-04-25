@@ -3,7 +3,9 @@ import Section from "./section";
 const Services = () => {
   return (
     <Section className="py-8 md:py-32">
-      <h2 className="font-bold text-6xl mb-8" id="services">My Services</h2>
+      <h2 className="font-bold text-6xl mb-8" id="services">
+        My Services
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
         <div className="p-8 rounded-md bg-primary/10  border-primary/15 border ">
           <h3 className="text-2xl font-semibold mb-2">Web Development</h3>
@@ -22,7 +24,7 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="p-8 rounded-md bg-accent/10 border-accent/50 border">
+        <div className="p-8 rounded-md bg-primary/10 border-primary/15 md:bg-accent/10 md:border-accent/50 border">
           <h3 className="text-2xl font-semibold mb-2">
             Web Performance Optimization
           </h3>
@@ -32,7 +34,7 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="p-8 rounded-md md:translate-y-16 bg-primary/10 border-primary/15 border">
+        <div className="p-8 rounded-md md:translate-y-16 bg-accent/10 border-accent/40 md:bg-primary/10 md:border-primary/15 border">
           <h3 className="text-2xl font-semibold mb-2">
             Cross-Browser Compatibility
           </h3>
