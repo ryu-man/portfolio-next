@@ -12,7 +12,7 @@ export default function Home() {
       <div className="flex flex-col ">
         <Header />
 
-        <div className="sd:contents flex flex-col">
+        <div className="md:contents flex flex-col">
           <Hero />
         </div>
 

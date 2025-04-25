@@ -148,7 +148,7 @@ const Skills = () => {
 
   return (
     <>
-      <div className="lg:flex sd:justify-around sd:h-fit grid grid-cols-4 place-items-center py-16 gap-y-8 gap-x-2 flex-wrap">
+      <div className="lg:flex sd:justify-around sd:h-fit grid grid-cols-4 md:grid-cols-5 place-items-center py-16 gap-2 flex-wrap justify-center justify-items-center justify">
         <TooltipProvider>
           {skills.map((skill) => {
             const Icon = skill.Icon;
@@ -166,7 +166,7 @@ const Skills = () => {
               <Tooltip key={skill.title}>
                 <TooltipTrigger
                   className={cn(
-                    "h-12 aspect-square hover:text-accent duration-300 ease-in-out rounded-lg p-2 bg-primary/5",
+                    "w-full max-w-24 p-6 lg:h-12 lg:w-auto aspect-square hover:text-accent duration-300 ease-in-out rounded-lg lg:p-2 bg-primary/5",
                     skill.isFramework &&
                       "bg-accent/5 text-accent hover:bg-accent/20 active:bg-accent/30"
                   )}
