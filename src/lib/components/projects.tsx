@@ -67,8 +67,8 @@ const projects = [
       { name: "Canvas API" },
     ],
     images: [
-      { url: "/images/projects/02/p2 (1).jpg" },
-      { url: "/images/projects/02/p2 (2).jpg" },
+      { url: "/images/projects/02/p20.jpg" },
+      { url: "/images/projects/02/p21.jpg" },
     ],
     github: "https://github.com/ryu-man/orderbook-svelte-d3",
   },
@@ -95,6 +95,35 @@ const projects = [
     ],
     github: "https://github.com/ryu-man/svelte-fui",
   },
+  {
+    name: "Obot - Open Source AI Agent Platform",
+    description: `Obot is an open source AI agent platform. Key features include:
+
+- Ability to build agents to support a variety of usecases including copilots, assistants, and autonomous agentic workflows.
+- Integration with leading LLM providers
+- Built-in RAG for your data
+- Easy integration with custom or private web services and APIs
+- OAuth 2.0 authentication`,
+    category: "Front End",
+    stack: [
+      { name: "HTML" },
+      { name: "CSS" },
+      { name: "JavaScript" },
+      { name: "TypeScript" },
+      { name: "TailwindCSS" },
+      { name: "SvelteKit" },
+      { name: "Server-Sent Events" },
+    ],
+    images: [
+      { url: "/images/projects/05/p50.png" },
+      { url: "/images/projects/05/p51.png" },
+      { url: "/images/projects/05/p52.png" },
+      { url: "/images/projects/05/p53.png" },
+      { url: "/images/projects/05/p54.png" },
+      { url: "/images/projects/05/p55.png" },
+    ],
+    github: "https://github.com/ryu-man/svelte-fui",
+  },
 ];
 
 const Projects = () => {
@@ -111,10 +140,10 @@ const Projects = () => {
         My Projects
       </h2>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="lg:columns-2 gap-8">
         {projects.map((project, i) => {
           return (
-            <div className="" key={project.name}>
+            <div className="mb-8 last:mb-0" key={project.name}>
               <div className="flex flex-col">
                 <a
                   className="text-3xl font-semibold hover:text-accent hover:underline duration-200 transition-colors"
@@ -126,7 +155,7 @@ const Projects = () => {
                 <div className="font-medium opacity-50">{project.category}</div>
               </div>
 
-              <p className="pb-2 pt-1 text-sm">{project.description}</p>
+              <p className="pb-2 pt-1 text-sm whitespace-pre-wrap">{project.description}</p>
 
               <div className="flex flex-wrap gap-2">
                 {project.stack.map((item) => {
