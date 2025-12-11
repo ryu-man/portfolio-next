@@ -31,8 +31,14 @@ const projects = [
     github: "",
   },
   {
-    name: "Gloss Cleaning Services",
-    description: "A Landing page for Gloss cleaning services company.",
+    name: "Obot - The Enterprise MCP Management Platform",
+    description: `Obot is an open-source platform that solves the key challenges of adopting the Model Context Protocol (MCP) at enterprise scale. Built for organizations that need to securely discover, manage, and govern AI integrations across their infrastructure.
+
+Key challenges it solves:
+- Discovery: Find the right MCP servers without a sprawling, ungoverned catalog
+- Security: Validate server security, enforce access controls, and maintain comprehensive audit trails
+- Operations: Automate authentication, scale infrastructure as usage grows, and roll out updates across environments
+- Governance: Intercept unsafe requests and enforce corporate policies before they reach your systems`,
     category: "Front End",
     stack: [
       { name: "HTML" },
@@ -41,15 +47,17 @@ const projects = [
       { name: "TypeScript" },
       { name: "TailwindCSS" },
       { name: "SvelteKit" },
+      { name: "Server-Sent Events" },
     ],
     images: [
-      { url: "/images/projects/03/p3 (1).png" },
-      { url: "/images/projects/03/p3 (2).png" },
-      { url: "/images/projects/03/p3 (6).png" },
-      { url: "/images/projects/03/p3 (3).png" },
-      { url: "/images/projects/03/p3 (4).png" },
+      { url: "/images/projects/05/p50.png" },
+      { url: "/images/projects/05/p51.png" },
+      { url: "/images/projects/05/p52.png" },
+      { url: "/images/projects/05/p53.png" },
+      { url: "/images/projects/05/p54.png" },
+      { url: "/images/projects/05/p55.png" },
     ],
-    github: "https://github.com/ryu-man/gloss-llc",
+    github: "https://github.com/obot-platform/obot",
   },
   {
     name: "Real-Time Orderbook for Crypto Exchanges ",
@@ -71,6 +79,27 @@ const projects = [
       { url: "/images/projects/02/p21.jpg" },
     ],
     github: "https://github.com/ryu-man/orderbook-svelte-d3",
+  },
+  {
+    name: "Gloss Cleaning Services",
+    description: "A Landing page for Gloss cleaning services company.",
+    category: "Front End",
+    stack: [
+      { name: "HTML" },
+      { name: "CSS" },
+      { name: "JavaScript" },
+      { name: "TypeScript" },
+      { name: "TailwindCSS" },
+      { name: "SvelteKit" },
+    ],
+    images: [
+      { url: "/images/projects/03/p3 (1).png" },
+      { url: "/images/projects/03/p3 (2).png" },
+      { url: "/images/projects/03/p3 (6).png" },
+      { url: "/images/projects/03/p3 (3).png" },
+      { url: "/images/projects/03/p3 (4).png" },
+    ],
+    github: "https://github.com/ryu-man/gloss-llc",
   },
   {
     name: "Svelte Fluent UI Library",
@@ -95,35 +124,6 @@ const projects = [
     ],
     github: "https://github.com/ryu-man/svelte-fui",
   },
-  {
-    name: "Obot - Open Source AI Agent Platform",
-    description: `Obot is an open source AI agent platform. Key features include:
-
-- Ability to build agents to support a variety of usecases including copilots, assistants, and autonomous agentic workflows.
-- Integration with leading LLM providers
-- Built-in RAG for your data
-- Easy integration with custom or private web services and APIs
-- OAuth 2.0 authentication`,
-    category: "Front End",
-    stack: [
-      { name: "HTML" },
-      { name: "CSS" },
-      { name: "JavaScript" },
-      { name: "TypeScript" },
-      { name: "TailwindCSS" },
-      { name: "SvelteKit" },
-      { name: "Server-Sent Events" },
-    ],
-    images: [
-      { url: "/images/projects/05/p50.png" },
-      { url: "/images/projects/05/p51.png" },
-      { url: "/images/projects/05/p52.png" },
-      { url: "/images/projects/05/p53.png" },
-      { url: "/images/projects/05/p54.png" },
-      { url: "/images/projects/05/p55.png" },
-    ],
-    github: "https://github.com/ryu-man/svelte-fui",
-  },
 ];
 
 const Projects = () => {
@@ -143,7 +143,7 @@ const Projects = () => {
       <div className="lg:columns-2 gap-8">
         {projects.map((project, i) => {
           return (
-            <div className="mb-8 last:mb-0" key={project.name}>
+            <div className="mb-8 last:mb-0 break-inside-avoid" key={project.name}>
               <div className="flex flex-col">
                 <a
                   className="text-3xl font-semibold hover:text-accent hover:underline duration-200 transition-colors"
@@ -155,7 +155,9 @@ const Projects = () => {
                 <div className="font-medium opacity-50">{project.category}</div>
               </div>
 
-              <p className="pb-2 pt-1 text-sm whitespace-pre-wrap">{project.description}</p>
+              <p className="pb-2 pt-1 text-sm whitespace-pre-wrap">
+                {project.description}
+              </p>
 
               <div className="flex flex-wrap gap-2">
                 {project.stack.map((item) => {
