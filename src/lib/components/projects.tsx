@@ -11,7 +11,7 @@ const projects = [
     name: "Cybersecurity Management Web Application",
     description:
       "Migrate a legacy Svelte code into a well architected, robust and highly responsive web application using Sveltekit to handle navigation, data loading and state management, Typescript for types documentation and TailwindCSS to handle handle styleing and keep component customizable, This project involve integration of graphQL API using URQL library.",
-    category: "Front End",
+    category: "Front End Application",
     stack: [
       { name: "HTML" },
       { name: "CSS" },
@@ -31,9 +31,59 @@ const projects = [
     github: "",
   },
   {
+    name: "Obot - The Enterprise MCP Management Platform",
+    description: `Obot is an open-source platform that solves the key challenges of adopting the Model Context Protocol (MCP) at enterprise scale. Built for organizations that need to securely discover, manage, and govern AI integrations across their infrastructure.
+
+Key challenges it solves:
+- Discovery: Find the right MCP servers without a sprawling, ungoverned catalog
+- Security: Validate server security, enforce access controls, and maintain comprehensive audit trails
+- Operations: Automate authentication, scale infrastructure as usage grows, and roll out updates across environments
+- Governance: Intercept unsafe requests and enforce corporate policies before they reach your systems`,
+    category: "Front End Application",
+    stack: [
+      { name: "HTML" },
+      { name: "CSS" },
+      { name: "JavaScript" },
+      { name: "TypeScript" },
+      { name: "TailwindCSS" },
+      { name: "SvelteKit" },
+      { name: "Server-Sent Events" },
+    ],
+    images: [
+      { url: "/images/projects/05/p50.png" },
+      { url: "/images/projects/05/p51.png" },
+      { url: "/images/projects/05/p52.png" },
+      { url: "/images/projects/05/p53.png" },
+      { url: "/images/projects/05/p54.png" },
+      { url: "/images/projects/05/p55.png" },
+    ],
+    github: "https://github.com/obot-platform/obot",
+  },
+  {
+    name: "Real-Time Orderbook for Crypto Exchanges ",
+    description:
+      "This project is an implementation of an orderbook integrated with a specific exchange. Powered by SvelteKit and D3.js, it leverages web sockets for real-time data updates in the web app through Svelte's stores. The orderbook is highly customizable and supports theming, giving users full control over the settings. As a versatile UI component, it can be seamlessly integrated into any webpage.",
+    category: "Data Visualization",
+    stack: [
+      { name: "HTML" },
+      { name: "CSS" },
+      { name: "JavaScript" },
+      { name: "TypeScript" },
+      { name: "TailwindCSS" },
+      { name: "SvelteKit" },
+      { name: "D3.js" },
+      { name: "Canvas API" },
+    ],
+    images: [
+      { url: "/images/projects/02/p20.jpg" },
+      { url: "/images/projects/02/p21.jpg" },
+    ],
+    github: "https://github.com/ryu-man/orderbook-svelte-d3",
+  },
+  {
     name: "Gloss Cleaning Services",
     description: "A Landing page for Gloss cleaning services company.",
-    category: "Front End",
+    category: "Landing Page",
     stack: [
       { name: "HTML" },
       { name: "CSS" },
@@ -52,31 +102,10 @@ const projects = [
     github: "https://github.com/ryu-man/gloss-llc",
   },
   {
-    name: "Real-Time Orderbook for Crypto Exchanges ",
-    description:
-      "This project is an implementation of an orderbook integrated with a specific exchange. Powered by SvelteKit and D3.js, it leverages web sockets for real-time data updates in the web app through Svelte's stores. The orderbook is highly customizable and supports theming, giving users full control over the settings. As a versatile UI component, it can be seamlessly integrated into any webpage.",
-    category: "Front End",
-    stack: [
-      { name: "HTML" },
-      { name: "CSS" },
-      { name: "JavaScript" },
-      { name: "TypeScript" },
-      { name: "TailwindCSS" },
-      { name: "SvelteKit" },
-      { name: "D3.js" },
-      { name: "Canvas API" },
-    ],
-    images: [
-      { url: "/images/projects/02/p20.jpg" },
-      { url: "/images/projects/02/p21.jpg" },
-    ],
-    github: "https://github.com/ryu-man/orderbook-svelte-d3",
-  },
-  {
     name: "Svelte Fluent UI Library",
     description:
       "Implementation of Microsoft Fluent UI design system for Svelte framework using TailwindCSS",
-    category: "Front End",
+    category: "UI Library",
     stack: [
       { name: "HTML" },
       { name: "CSS" },
@@ -96,15 +125,10 @@ const projects = [
     github: "https://github.com/ryu-man/svelte-fui",
   },
   {
-    name: "Obot - Open Source AI Agent Platform",
-    description: `Obot is an open source AI agent platform. Key features include:
-
-- Ability to build agents to support a variety of usecases including copilots, assistants, and autonomous agentic workflows.
-- Integration with leading LLM providers
-- Built-in RAG for your data
-- Easy integration with custom or private web services and APIs
-- OAuth 2.0 authentication`,
-    category: "Front End",
+    name: "Svelte Atoms UI Library",
+    description:
+      "Headless Svelte 5 UI library for dynamic design systems with fully interchangeable components and global configuration support.",
+    category: "UI Library",
     stack: [
       { name: "HTML" },
       { name: "CSS" },
@@ -112,17 +136,11 @@ const projects = [
       { name: "TypeScript" },
       { name: "TailwindCSS" },
       { name: "SvelteKit" },
-      { name: "Server-Sent Events" },
+      { name: "Storybook" },
     ],
     images: [
-      { url: "/images/projects/05/p50.png" },
-      { url: "/images/projects/05/p51.png" },
-      { url: "/images/projects/05/p52.png" },
-      { url: "/images/projects/05/p53.png" },
-      { url: "/images/projects/05/p54.png" },
-      { url: "/images/projects/05/p55.png" },
     ],
-    github: "https://github.com/ryu-man/svelte-fui",
+    github: "https://github.com/svelte-atoms/core",
   },
 ];
 
@@ -143,7 +161,7 @@ const Projects = () => {
       <div className="lg:columns-2 gap-8">
         {projects.map((project, i) => {
           return (
-            <div className="mb-8 last:mb-0" key={project.name}>
+            <div className="mb-8 last:mb-0 break-inside-avoid" key={project.name}>
               <div className="flex flex-col">
                 <a
                   className="text-3xl font-semibold hover:text-accent hover:underline duration-200 transition-colors"
@@ -155,7 +173,9 @@ const Projects = () => {
                 <div className="font-medium opacity-50">{project.category}</div>
               </div>
 
-              <p className="pb-2 pt-1 text-sm whitespace-pre-wrap">{project.description}</p>
+              <p className="pb-2 pt-1 text-sm whitespace-pre-wrap">
+                {project.description}
+              </p>
 
               <div className="flex flex-wrap gap-2">
                 {project.stack.map((item) => {
@@ -170,7 +190,7 @@ const Projects = () => {
                 })}
               </div>
 
-              <div className="p-4 grid grid-cols-4 gap-1">
+              <div className="p-4 grid grid-cols-4 gap-1 relative">
                 <Image
                   className="rounded-xl border shadow-md min-w-full overflow-hidden object-contain col-span-4 object-cover h-72 cursor-pointer"
                   src={project.images.at(0)?.url}
@@ -205,7 +225,9 @@ const Projects = () => {
                     );
                   })
                 ) : (
-                  <div>No image is available</div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <p className="text-xl font-medium opacity-50">No image is available</p>
+                  </div>
                 )}
               </div>
             </div>
