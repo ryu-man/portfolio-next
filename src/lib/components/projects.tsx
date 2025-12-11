@@ -11,7 +11,7 @@ const projects = [
     name: "Cybersecurity Management Web Application",
     description:
       "Migrate a legacy Svelte code into a well architected, robust and highly responsive web application using Sveltekit to handle navigation, data loading and state management, Typescript for types documentation and TailwindCSS to handle handle styleing and keep component customizable, This project involve integration of graphQL API using URQL library.",
-    category: "Front End",
+    category: "Front End Application",
     stack: [
       { name: "HTML" },
       { name: "CSS" },
@@ -39,7 +39,7 @@ Key challenges it solves:
 - Security: Validate server security, enforce access controls, and maintain comprehensive audit trails
 - Operations: Automate authentication, scale infrastructure as usage grows, and roll out updates across environments
 - Governance: Intercept unsafe requests and enforce corporate policies before they reach your systems`,
-    category: "Front End",
+    category: "Front End Application",
     stack: [
       { name: "HTML" },
       { name: "CSS" },
@@ -63,7 +63,7 @@ Key challenges it solves:
     name: "Real-Time Orderbook for Crypto Exchanges ",
     description:
       "This project is an implementation of an orderbook integrated with a specific exchange. Powered by SvelteKit and D3.js, it leverages web sockets for real-time data updates in the web app through Svelte's stores. The orderbook is highly customizable and supports theming, giving users full control over the settings. As a versatile UI component, it can be seamlessly integrated into any webpage.",
-    category: "Front End",
+    category: "Data Visualization",
     stack: [
       { name: "HTML" },
       { name: "CSS" },
@@ -83,7 +83,7 @@ Key challenges it solves:
   {
     name: "Gloss Cleaning Services",
     description: "A Landing page for Gloss cleaning services company.",
-    category: "Front End",
+    category: "Landing Page",
     stack: [
       { name: "HTML" },
       { name: "CSS" },
@@ -105,7 +105,7 @@ Key challenges it solves:
     name: "Svelte Fluent UI Library",
     description:
       "Implementation of Microsoft Fluent UI design system for Svelte framework using TailwindCSS",
-    category: "Front End",
+    category: "UI Library",
     stack: [
       { name: "HTML" },
       { name: "CSS" },
@@ -123,6 +123,24 @@ Key challenges it solves:
       { url: "/images/projects/04/p4 (5).png" },
     ],
     github: "https://github.com/ryu-man/svelte-fui",
+  },
+  {
+    name: "Svelte Atoms UI Library",
+    description:
+      "Headless Svelte 5 UI library for dynamic design systems with fully interchangeable components and global configuration support.",
+    category: "UI Library",
+    stack: [
+      { name: "HTML" },
+      { name: "CSS" },
+      { name: "JavaScript" },
+      { name: "TypeScript" },
+      { name: "TailwindCSS" },
+      { name: "SvelteKit" },
+      { name: "Storybook" },
+    ],
+    images: [
+    ],
+    github: "https://github.com/svelte-atoms/core",
   },
 ];
 
@@ -172,7 +190,7 @@ const Projects = () => {
                 })}
               </div>
 
-              <div className="p-4 grid grid-cols-4 gap-1">
+              <div className="p-4 grid grid-cols-4 gap-1 relative">
                 <Image
                   className="rounded-xl border shadow-md min-w-full overflow-hidden object-contain col-span-4 object-cover h-72 cursor-pointer"
                   src={project.images.at(0)?.url}
@@ -207,7 +225,9 @@ const Projects = () => {
                     );
                   })
                 ) : (
-                  <div>No image is available</div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <p className="text-xl font-medium opacity-50">No image is available</p>
+                  </div>
                 )}
               </div>
             </div>
